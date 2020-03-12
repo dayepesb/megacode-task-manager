@@ -1,33 +1,43 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-
-import { ErrorInterceptor } from './core/helpers/error.interceptor';
-import { JwtInterceptor } from './core/helpers/jwt.interceptor';
-import { FakeBackendProvider } from './core/helpers/fake-backend';
-
-import { LayoutsModule } from './layouts/layouts.module';
-import { AppRoutingModule } from './app-routing.module';
+import {APP_INITIALIZER, NgModule} from '@angular/core';
+import {RouterModule} from '@angular/router';
 import { AppComponent } from './app.component';
+import { PrincipalPageComponent } from './general/principal-page/principal-page.component';
+import {APP_ROUTES} from '@app/config/main.routes';
+import { I18nPipe } from './pipe/i18n.pipe';
+import {LabelService} from '@app/service/label-service/label.service';
+import {HttpClientModule, HttpClient} from '@angular/common/http';
+import { HeaderPrincipalPageComponent } from './general/header-principal-page/header-principal-page.component';
+
+export function loadResources(labelService: LabelService, http: HttpClient) {
+  return async () => {
+    await labelService.getLabels();
+  }
+}
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PrincipalPageComponent,
+    I18nPipe,
+    HeaderPrincipalPageComponent
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
     HttpClientModule,
-    LayoutsModule,
-    AppRoutingModule,
+    RouterModule.forRoot(APP_ROUTES)
+  ],
+  exports: [
+    RouterModule
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-
-    // provider used to create fake backend
-    FakeBackendProvider
+    I18nPipe,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: loadResources,
+      multi: true,
+      deps: [LabelService, HttpClient]
+    }
   ],
   bootstrap: [AppComponent]
 })

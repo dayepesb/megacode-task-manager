@@ -1,0 +1,12 @@
+@import "~assets/scss/variables_megacode";
+
+nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1001;
+  padding: 0 12px;
+  -webkit-box-shadow: 0 0 35px 0 rgba(54,61,71,.15);
+  box-shadow: 0 0 35px 0 rgb(11, 12, 12);
+  background-color: $background-color;
+}
