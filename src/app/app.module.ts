@@ -8,6 +8,12 @@ import { I18nPipe } from './pipe/i18n.pipe';
 import {LabelService} from '@app/service/label-service/label.service';
 import {HttpClientModule, HttpClient} from '@angular/common/http';
 import { HeaderPrincipalPageComponent } from './general/header-principal-page/header-principal-page.component';
+import { FooterPrincipalPageComponent } from './general/footer-principal-page/footer-principal-page.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSliderModule} from '@angular/material';
+import {FaIconLibrary, FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import {faGithub, faMedium, faStackOverflow} from '@fortawesome/free-brands-svg-icons';
+import {addLibraryIcons} from '@app/config/fontawesome-icons';
 
 export function loadResources(labelService: LabelService, http: HttpClient) {
   return async () => {
@@ -20,12 +26,15 @@ export function loadResources(labelService: LabelService, http: HttpClient) {
     AppComponent,
     PrincipalPageComponent,
     I18nPipe,
-    HeaderPrincipalPageComponent
+    HeaderPrincipalPageComponent,
+    FooterPrincipalPageComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(APP_ROUTES)
+    RouterModule.forRoot(APP_ROUTES),
+    BrowserAnimationsModule,
+    FontAwesomeModule
   ],
   exports: [
     RouterModule
@@ -41,4 +50,8 @@ export function loadResources(labelService: LabelService, http: HttpClient) {
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private library: FaIconLibrary) {
+    addLibraryIcons(library);
+  }
+}
