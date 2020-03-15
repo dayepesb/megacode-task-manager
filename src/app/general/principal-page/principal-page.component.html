@@ -1,0 +1,22 @@
+<ngb-carousel #carousel interval="5000" [pauseOnHover]="pauseOnHover" (slide)="onSlide($event)">
+  <ng-template ngbSlide *ngFor="let img of images; index as i">
+    <div class="carousel-caption">
+      <h3>My slide {{i + 1}} title</h3>
+    </div>
+    <a href="https://www.google.fr/?q=Number+{{i+1}}" target="_blank" rel="nofollow noopener noreferrer">
+      <div class="picsum-img-wrapper">
+        <img [src]="img" alt="My image {{i + 1}} description">
+      </div>
+    </a>
+  </ng-template>
+</ngb-carousel>
+
+<h2>
+  Lorem ipsum dolor sit amet, in ac bibendum. Venenatis non enim class elit, nunc molestie magnis, convallis ut odio. Rhoncus orci mi, pellentesque justo. Turpis lectus mauris. Felis eu ultricies sed nonummy, praesent cursus in lorem vulputate. Id senectus fusce nonummy suspendisse eu viverra, fringilla pede ipsam donec, in bibendum morbi amet. Dolor mattis nibh tempus sagittis, curae varius morbi in elit iaculis vestibulum. Adipiscing et erat et, in nulla quam etiam eros massa, et duis vel et sit. Suspendisse cursus malesuada sit. Nec adipiscing laoreet sem nec donec est, ultricies id platea nisl, in ut adipiscing, tellus ornare amet tincidunt ullamcorper pharetra, a est sed urna quisque non. In consequat magna est, lectus nonummy enim orci egestas nec, id vitae sed faucibus sint nulla, urna curabitur habitasse vulputate libero sollicitudin elementum, in fringilla nihil tempor aliquip. Vel cras mi felis, eget urna dolor sed, sit mollis ultricies nibh sed.
+
+  Conubia wisi lacus penatibus nunc, vitae nisl, in sit consectetuer pede taciti, quisque ligula mus odio vestibulum velit. Sodales lorem non amet ut id, justo porttitor dis hendrerit rhoncus suspendisse suspendisse. Augue ligula sagittis cras et ligula fermentum, imperdiet vel, aptent vestibulum non consequat pellentesque vivamus, ut suspendisse tortor, donec dolor montes donec etiam aliquet. Scelerisque ac feugiat leo, lobortis dolor eros, turpis molestie, bibendum porttitor. Duis at luctus enim, magnis volutpat per lacinia nibh dictum, at interdum eros ut consectetuer. Nisl metus ut et sed duis eros. Sapien tempus vestibulum est aenean erat ultricies. Pellentesque ante porttitor, erat sodales quis quam nulla nunc nulla, tempor consequatur tincidunt velit ipsum vitae, mi posuere dapibus in, quae viverra. Vestibulum neque in purus nullam, sed nostra quam sodales dolor venenatis etiam, magna sed dui elit maecenas massa, varius orci sit commodo integer, habitasse in. Porttitor nam neque at, imperdiet tellus dolor neque praesent vestibulum, elit in.
+
+  Viverra nisl fringilla curabitur, curabitur mollis tellus phasellus aliquam donec et. Augue hendrerit tincidunt euismod nam quisque, non lacus parturient eu rerum sed orci. Ligula maecenas vel ac dapibus, sodales faucibus. Sem nullam odio eget. Felis est ac quam, ligula amet interdum elit turpis pulvinar, vestibulum nisl, scelerisque eu malesuada ut dolor. Occaecati penatibus et, aliquam non porttitor pulvinar praesent, libero turpis aliquam dolor, convallis tempus maecenas, tellus dolor nec ante fusce massa tempor. Semper urna vestibulum ut vel suscipit, orci vestibulum, nec et iaculis nibh donec nibh, autem nulla leo. Ligula lacinia tempor, imperdiet venenatis, quis suspendisse curabitur sapien mollis mattis arcu. In ante, pulvinar adipiscing nullam consectetuer dictum sit in, interdum torquent eget placerat ipsum, quis lacus placerat, morbi tellus arcu. Purus quisque aliquam nulla sed sit, maecenas vestibulum lobortis orci. Mollis augue risus nec maecenas iaculis, fermentum metus eu nunc eros facilisis, mauris et id.
+
+  Placerat aliquam, netus vel porttitor orci orci nec, dignissim volutpat sem, accumsan fringilla wisi augue libero. Nullam vel rhoncus mus magna. Ultricies aliquam nec adipiscing pede non sed, sed a viverra placerat eget sit. Pulvinar amet a consectetuer sit id. Sollicitudin vestibulum, aliquam metus nibh vulputate at sed, fermentum ipsam sit dui. Vitae tempor sapien massa magna per phasellus, nec elit massa augue, etiam leo aenean pretium ut cursus, morbi vitae sed mauris, dolor lobortis tincidunt amet. Ornare varius vel lobortis, in natoque sit, proin sapien augue viverra consectetuer mattis. Aliquam aliquam metus suspendisse odio orci sollicitudin, venenatis iaculis integer velit. Molestie wisi eget amet felis, placerat lacus. Curabitur nibh hendrerit quis eget, sed sint id sodales. Dis fringilla non massa montes fusce, pellentesque tempor cillum lorem, luctus aenean mus sit proin nec nunc. Vel leo, vivamus amet, amet at, dis bibendum.
+</h2>

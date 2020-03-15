@@ -14,6 +14,8 @@ import {MatSliderModule} from '@angular/material';
 import {FaIconLibrary, FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {faGithub, faMedium, faStackOverflow} from '@fortawesome/free-brands-svg-icons';
 import {addLibraryIcons} from '@app/config/fontawesome-icons';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {FormsModule} from '@angular/forms';
 
 export function loadResources(labelService: LabelService, http: HttpClient) {
   return async () => {
@@ -34,7 +36,9 @@ export function loadResources(labelService: LabelService, http: HttpClient) {
     HttpClientModule,
     RouterModule.forRoot(APP_ROUTES),
     BrowserAnimationsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule,
+    NgbModule
   ],
   exports: [
     RouterModule
