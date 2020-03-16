@@ -8,18 +8,18 @@ import {ImageService} from '@app/service/image-service/image.service';
   styleUrls: ['./principal-page.component.scss']
 })
 export class PrincipalPageComponent implements OnInit {
-  images: string [];
+  images: any [];
 
   paused = false;
   unpauseOnArrow = false;
   pauseOnIndicator = false;
-  pauseOnHover = true;
+  pauseOnHover = false;
 
   @ViewChild('carousel', {static : true}) carousel: NgbCarousel;
 
   constructor(private imageService: ImageService) {
     this.imageService.getImagePrincipalPage();
-    this.images = imageService.images
+    this.images = imageService.images;
   }
 
   ngOnInit() {

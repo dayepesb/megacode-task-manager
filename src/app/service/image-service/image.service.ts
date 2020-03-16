@@ -7,7 +7,7 @@ import {HttpClient, HttpParams} from '@angular/common/http';
 })
 export class ImageService {
 
-  images: string [] = [];
+  images: any [] = [];
 
   constructor(private http: HttpClient) { }
 
@@ -21,7 +21,11 @@ export class ImageService {
       .toPromise()
       .then(response => {
         Object.keys(response).forEach(element => {
-          this.images.push(response[element]['imageB64']);
+          this.images.push({
+            imageB64: response[element]['imageB64'],
+            title: response[element]['titleImage'],
+            comment: response[element]['commentsImage']
+          });
         });
       }).catch(err => {
         console.log('error create pipe');
