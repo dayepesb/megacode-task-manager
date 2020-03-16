@@ -27,7 +27,7 @@ export class LabelService {
     let res: Promise<any>;
     let url = Constants.LABELS;
 
-    const params: HttpParams = new HttpParams().set('app', Constants.NAME_APP);
+    const params: HttpParams = new HttpParams().set(Constants.PARAMS.APP_ID, Constants.ID_APP);
 
     // @ts-ignore
     res = this.http.get(url, { params: params })

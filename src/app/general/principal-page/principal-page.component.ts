@@ -1,5 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
+import {ImageService} from '@app/service/image-service/image.service';
 
 @Component({
   selector: 'app-principal-page',
@@ -7,7 +8,7 @@ import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/n
   styleUrls: ['./principal-page.component.scss']
 })
 export class PrincipalPageComponent implements OnInit {
-  images = [62, 83, 466, 965, 982, 1043, 738].map((n) => `https://picsum.photos/id/${n}/900/500`);
+  images: string [];
 
   paused = false;
   unpauseOnArrow = false;
@@ -16,7 +17,10 @@ export class PrincipalPageComponent implements OnInit {
 
   @ViewChild('carousel', {static : true}) carousel: NgbCarousel;
 
-  constructor() { }
+  constructor(private imageService: ImageService) {
+    this.imageService.getImagePrincipalPage();
+    this.images = imageService.images
+  }
 
   ngOnInit() {
   }
