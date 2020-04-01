@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
 import {ImageService} from '@app/service/image-service/image.service';
+import {Constants} from '@app/util/constants';
 
 @Component({
   selector: 'app-principal-page',
@@ -9,6 +10,7 @@ import {ImageService} from '@app/service/image-service/image.service';
 })
 export class PrincipalPageComponent implements OnInit {
   images: any [];
+  url: string;
 
   paused = false;
   unpauseOnArrow = false;
@@ -18,8 +20,10 @@ export class PrincipalPageComponent implements OnInit {
   @ViewChild('carousel', {static : true}) carousel: NgbCarousel;
 
   constructor(private imageService: ImageService) {
-    this.imageService.getImagePrincipalPage();
+    this.getImagesCarrousel();
     this.images = imageService.images;
+    console.log(this.images);
+    this.url = Constants.URL_IMAGES_S3;
   }
 
   ngOnInit() {
@@ -44,4 +48,7 @@ export class PrincipalPageComponent implements OnInit {
     }
   }
 
+  getImagesCarrousel() {
+    this.imageService.getImagePrincipalPage();
+  }
 }

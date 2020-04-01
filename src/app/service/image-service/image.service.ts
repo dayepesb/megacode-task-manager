@@ -22,7 +22,7 @@ export class ImageService {
       .then(response => {
         Object.keys(response).forEach(element => {
           this.images.push({
-            imageB64: response[element]['imageB64'],
+            path: response[element]['path'],
             title: response[element]['titleImage'],
             comment: response[element]['commentsImage']
           });

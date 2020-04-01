@@ -8,6 +8,8 @@ export class Constants {
 
   public static SELECT_LENGUAGE = Constants.LENGUAGES.CODE_EN;
 
+  public static readonly URL_IMAGES_S3 = 'https://megacode-bucket-images.s3-sa-east-1.amazonaws.com/';
+
   public static readonly NAME_APP: string = 'task-manager';
   public static readonly ID_APP: string = '1';
   public static readonly DEV_URL: string = 'http://localhost:8080';

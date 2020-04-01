@@ -1,18 +1,28 @@
-<ngb-carousel #carousel interval="5000" [pauseOnHover]="pauseOnHover" (slide)="onSlide($event)">
+<ngb-carousel #carousel *ngIf="images.length>0" interval="5000" [pauseOnHover]="pauseOnHover" (slide)="onSlide($event)">
   <ng-template ngbSlide *ngFor="let img of images; index as i">
     <div class="carousel-caption">
       <h3>{{img.title}}</h3>
     </div>
-    <a href="https://www.google.fr/?q=Number+{{i+1}}" target="_blank" rel="nofollow noopener noreferrer">
+    <a target="_blank" rel="nofollow noopener noreferrer">
       <div class="picsum-img-wrapper">
-        <img class="img-carrousel" [src]="img.imageB64" alt="My image {{i + 1}} description">
+        <img class="img-carrousel" [src]="url+img.path" alt="{{img.comments}} description">
       </div>
     </a>
   </ng-template>
 </ngb-carousel>
 
+
+<div class="card" style="width: 18rem;">
+
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
 <h2>
-  Lorem ipsum dolor sit amet, in ac bibendum. Venenatis non enim class elit, nunc molestie magnis, convallis ut odio. Rhoncus orci mi, pellentesque justo. Turpis lectus mauris. Felis eu ultricies sed nonummy, praesent cursus in lorem vulputate. Id senectus fusce nonummy suspendisse eu viverra, fringilla pede ipsam donec, in bibendum morbi amet. Dolor mattis nibh tempus sagittis, curae varius morbi in elit iaculis vestibulum. Adipiscing et erat et, in nulla quam etiam eros massa, et duis vel et sit. Suspendisse cursus malesuada sit. Nec adipiscing laoreet sem nec donec est, ultricies id platea nisl, in ut adipiscing, tellus ornare amet tincidunt ullamcorper pharetra, a est sed urna quisque non. In consequat magna est, lectus nonummy enim orci egestas nec, id vitae sed faucibus sint nulla, urna curabitur habitasse vulputate libero sollicitudin elementum, in fringilla nihil tempor aliquip. Vel cras mi felis, eget urna dolor sed, sit mollis ultricies nibh sed.
+  Lorem ipsum dolor sit amet, in ac bibendum. Venenatis non enim class elit, nunc molestie magnis, convallis ut odio. Rhoncus orci mi, pellentesque justo. Turpis lectus mauris. Felis eu ultricies sed nonummy, praesent cursus in lorem vulputate. Id senectus fusce nonummy suspendisse eu viverra, fringilla pede ipsam donec, in bibendum morbi amet. Dolor mattis nibh tempus sagittis, curae varius morbi in elit iaculis vestibulum. Adipiscing et erat et, in nulla quam etiam eros massa, et duis vel et sit. Suspendisse cursus malesuada sit. Nec adipiscing laoreet sem nec donec est, ultricies id platea nisl, in ut adipiscing, tellus ornare amet tincidunt ullamcorper pharetra, a est sed urna quisque non. In cequat magna est, lectus nonummy enim orci egestas nec, id vitae sed faucibus sint nulla, urna curabitur habitasse vulputate libero sollicitudin elementum, in fringilla nihil tempor aliquip. Vel cras mi felis, eget urna dolor sed, sit mollis ultricies nibh sed.
 
   Conubia wisi lacus penatibus nunc, vitae nisl, in sit consectetuer pede taciti, quisque ligula mus odio vestibulum velit. Sodales lorem non amet ut id, justo porttitor dis hendrerit rhoncus suspendisse suspendisse. Augue ligula sagittis cras et ligula fermentum, imperdiet vel, aptent vestibulum non consequat pellentesque vivamus, ut suspendisse tortor, donec dolor montes donec etiam aliquet. Scelerisque ac feugiat leo, lobortis dolor eros, turpis molestie, bibendum porttitor. Duis at luctus enim, magnis volutpat per lacinia nibh dictum, at interdum eros ut consectetuer. Nisl metus ut et sed duis eros. Sapien tempus vestibulum est aenean erat ultricies. Pellentesque ante porttitor, erat sodales quis quam nulla nunc nulla, tempor consequatur tincidunt velit ipsum vitae, mi posuere dapibus in, quae viverra. Vestibulum neque in purus nullam, sed nostra quam sodales dolor venenatis etiam, magna sed dui elit maecenas massa, varius orci sit commodo integer, habitasse in. Porttitor nam neque at, imperdiet tellus dolor neque praesent vestibulum, elit in.
 
