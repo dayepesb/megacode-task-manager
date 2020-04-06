@@ -1,16 +1,95 @@
 @import "~assets/scss/variables_megacode";
 
-nav {
-  position: fixed;
-  left: 0;
-  right: 0;
-  z-index: 1001;
-  padding: 0 12px;
-  -webkit-box-shadow: 0 0 35px 0 rgba(54,61,71,.15);
-  box-shadow: 0 0 35px 0 rgb(11, 12, 12);
-  background-color: $background-color;
+.img-carrousel {
+  width: $percent-100;
 }
 
-.img-carrousel {
-  width: 100%;
+.image-center {
+  margin-left: $percent-5;
+  margin-right: $percent-5;
+}
+
+.title-principal-page{
+  font-family: $font-family-title;
+  letter-spacing: $letter-spacing;
+  font-weight: $font-weith-title;
+  line-height: $line-height;
+  font-size: $font-size-title;
+  font-style: $font-style;
+  margin-top: $size-10;
+  color: $title-color;
+}
+.description-principal-page {
+  font-family: $font-family-description;
+  letter-spacing: $letter-spacing;
+  font-weight: $font-weith-description;
+  line-height: $line-height;
+  font-size: $font-size-description;
+  font-style: $font-style;
+  margin-top: $size-10;
+  color: $description-color;
+}
+
+.img-preview-megacode {
+  border-radius: 3px;
+  -webkit-box-shadow: $box-shadow-all-borders;
+  -moz-box-shadow: $box-shadow-all-borders;
+  box-shadow: $box-shadow-all-borders;
+}
+
+.define-kanban-flow {
+  margin-top: $percent-10;
+}
+
+.define-flow-section {
+  margin-top: $percent-5;
+  background-color: $background-second-color;
+}
+
+.container-megacode-app {
+  background-color: $background-primary-color;
+  padding-top: $percent-5;
+  padding-bottom: $percent-5;
+  border-radius: $size-10;
+}
+
+.container-stores {
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.margin-text-megacode {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+#img-app-icon-megacode {
+  width: 70px;
+}
+
+#img-app-store, #img-google-store  {
+  width: 179px;
+  height: 53px;
+}
+
+@media(max-width: $size-768) {
+
+  #img-app-icon-megacode {
+    width: 25%;
+  }
+
+  .description-megacode {
+    padding-left: $percent-12;
+    padding-right: $percent-12;
+    padding-top: $percent-5;
+  }
+}
+
+@media (min-width: $size-768) {
+  .principal-page-left{
+    margin-left: $percent-5;
+    margin-right: $percent-5;
+  }
 }

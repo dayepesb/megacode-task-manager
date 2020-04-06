@@ -1,17 +1,38 @@
 @import "~assets/scss/variables_megacode";
 
-#footer-megacode {
-  margin-top: $default-margin-top;
+.footer-megacode-icons {
+  background-color: $background-primary-color;
+  font-family: $font-family-description;
+  letter-spacing: $letter-spacing;
+  font-weight: $font-weith-description;
+  line-height: $line-height;
+  font-size: $font-size-description;
+  font-style: $font-style;
+  color: $description-color;
+  padding-top: $size-20;
+  padding-bottom: $size-20;
 }
 
-#corporygth {
-  background-color: magenta;
+.footer-megacode {
+  background-color: $background-primary-color;
+  font-family: $font-family-text;
+  letter-spacing: $letter-spacing;
+  font-weight: $font-weith-description;
+  line-height: $line-height;
+  font-size: $font-size-text;
+  font-style: $font-style;
+  color: $description-color;
+  padding-top: $size-10;
+  padding-bottom: $size-10;
 }
 
 fa-icon{
-  color: magenta;
+  color: $text-color;
+  font-size: 2rem;
+  margin-left: $size-10;
+  margin-right: $size-10;
   svg {
-    width: 40px;
-    height: 40px;
+    width: 70px;
+    height: 70px;
   }
 }

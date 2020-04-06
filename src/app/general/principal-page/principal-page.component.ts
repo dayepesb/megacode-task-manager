@@ -17,6 +17,11 @@ export class PrincipalPageComponent implements OnInit {
   pauseOnIndicator = false;
   pauseOnHover = false;
 
+  flex = window.innerWidth <= 768;
+
+
+  image: string;
+
   @ViewChild('carousel', {static : true}) carousel: NgbCarousel;
 
   constructor(private imageService: ImageService) {

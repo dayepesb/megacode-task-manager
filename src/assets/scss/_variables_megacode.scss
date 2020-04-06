@@ -1,6 +1,122 @@
-$background-color: #282e38;
-$default-margin-top: 30px;
 
+@font-face {
+  font-family: charlie-bold;
+  src: url(assets/font/CharlieDisplay-Bold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: charlie-ligth;
+  src: url(assets/font/CharlieDisplay-Light.ttf) format('truetype');
+}
+
+
+@font-face {
+  font-family: charlie-regular;
+  src: url(assets/font/CharlieDisplay-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: charlie-semi-bold;
+  src: url(assets/font/CharlieDisplay-Semibold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: charlie-thin;
+  src: url(assets/font/CharlieDisplay-Thin.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: charlie-ultra;
+  src: url(assets/font/CharlieDisplay-Ultra.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: charlie-text-black;
+  src: url(assets/font/CharlieText-Black.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: charlie-text-bold;
+  src: url(assets/font/CharlieText-Bold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: charlie-text-ligth;
+  src: url(assets/font/CharlieText-Light.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: charlie-text-regular;
+  src: url(assets/font/CharlieText-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: charlie-text-semi-bold;
+  src: url(assets/font/CharlieText-Semibold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: charlie-text-thin;
+  src: url(assets/font/CharlieText-Thin.ttf) format('truetype');
+}
+
+//Colors
+$background-color: #282e38;
+$text-color: #8696af;
+
+$title-color: #9d9d9d;
+$description-color: #efefef;
+$background-primary-color: #343a40 !important;
+$background-second-color: #171a20;
+
+//Fomnts
+$font-size-title: 1.5rem;
+$font-size-description: 1.25rem;
+$font-size-text: 1rem;
+$letter-spacing: .3px;
+$font-weith-title: 500;
+$font-weith-description: 400;
+$line-height: 1.33333333;
+$font-style: normal;
+$font-family-title: charlie-semi-bold ,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Noto Sans,Ubuntu,Droid Sans,Helvetica Neue,sans-serif;
+$font-family-description: charlie-text-ligth ,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Noto Sans,Ubuntu,Droid Sans,Helvetica Neue,sans-serif;
+$font-family-text: charlie-text-regular ,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Noto Sans,Ubuntu,Droid Sans,Helvetica Neue,sans-serif;
+
+//Sizes
+$size-10: 10px;
+$size-20: 20px;
+$size-768: 768px;
+
+//Percents
+$percent-100: 100%;
+$percent-12: 12%;
+$percent-10: 10%;
+$percent-5: 5%;
+
+//box shadow
+
+$box-shadow-all-borders: 0px 0px 21px 10px rgba(0,0,0,0.65);
+
+//Genral
 body {
+  background-color: $background-color;
+}
+
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+
+nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1001;
+  -webkit-box-shadow: 0px 15px 15px 0px rgba(0,0,0,0.71);
+  -moz-box-shadow: 0px 15px 15px 0px rgba(0,0,0,0.71);
+  box-shadow: 0px 15px 15px 0px rgba(0,0,0,0.71);
   background-color: $background-color;
 }

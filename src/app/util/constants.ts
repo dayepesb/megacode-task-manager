@@ -12,8 +12,8 @@ export class Constants {
 
   public static readonly NAME_APP: string = 'task-manager';
   public static readonly ID_APP: string = '1';
-  public static readonly DEV_URL: string = 'http://localhost:8080';
-  public static readonly PROD_URL: string = 'http://localhost:8080';
+  public static readonly DEV_URL: string = 'http://192.168.0.102:8080';
+  public static readonly PROD_URL: string = 'http://192.168.1.102:8080';
   public static readonly BASE_URL: string = environment ? Constants.PROD_URL : Constants.DEV_URL;
 
   public static readonly LABELS: string = Constants.BASE_URL + '/labels/app';

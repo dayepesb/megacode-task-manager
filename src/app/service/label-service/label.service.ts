@@ -35,7 +35,7 @@ export class LabelService {
       .then(response => {
         this.messages = new Map();
         Object.keys(response).forEach(element => {
-          this.messages.set(response[element]['key'], response[element]['labelEn']);
+          this.messages.set(response[element]['key'], response[element]['LabelEn']);
         });
       }).catch(err => {
         console.log('error create pipe');
