@@ -1,13 +1,10 @@
 <app-header-principal-page></app-header-principal-page>
 
-<ngb-carousel #carousel *ngIf="images.length>0" interval="5000" [pauseOnHover]="pauseOnHover" (slide)="onSlide($event)">
+<ngb-carousel id="carrousel-megacode" #carousel *ngIf="images.length>0" interval="7000" [pauseOnHover]="pauseOnHover" (slide)="onSlide($event)">
   <ng-template ngbSlide *ngFor="let img of images; index as i">
-    <div class="carousel-caption">
-      <h3>{{img.title }}</h3>
-    </div>
     <a target="_blank" rel="nofollow noopener noreferrer">
       <div class="picsum-img-wrapper">
-        <img class="img-carrousel" [src]="url+img.path" alt="{{img.comments}} description">
+        <img class="img-carrousel" [src]="url+img.path">
       </div>
     </a>
   </ng-template>
@@ -15,7 +12,7 @@
 
 <div class="row">
   <div class="col-md-6">
-    <img id="img-page-kanban" class="img-preview-megacode image-center" src="../../../assets/principal-page/PageKanban.png" width="90%">
+    <img id="img-page-kanban" class="img-preview-megacode image-center" src="../../../../assets/principal-page/PageKanban.png" width="90%">
   </div>
   <div class="col-md-6 description-megacode">
     <div class="title-principal-page">{{'megacode.kanban.title' | i18n}}</div>
@@ -29,13 +26,13 @@
     <div class="description-principal-page principal-page-left">{{'megacode.profile.description' | i18n}}</div>
   </div>
   <div class="col-md-6">
-    <img id="img-page-profile" class="img-preview-megacode image-center" src="../../../assets/principal-page/UserProfile.png" width="90%">
+    <img id="img-page-profile" class="img-preview-megacode image-center" src="../../../../assets/principal-page/UserProfile.png" width="90%">
   </div>
 </div>
 
 <div class="row">
   <div class="col-md-6">
-    <img id="img-page-user-principal" class="img-preview-megacode image-center" src="../../../assets/principal-page/PrincipalPageUser.png" width="90%">
+    <img id="img-page-user-principal" class="img-preview-megacode image-center" src="../../../../assets/principal-page/PrincipalPageUser.png" width="90%">
   </div>
   <div class="col-md-6 description-megacode">
     <div class="title-principal-page">{{'megacode.principal.page.user.title' | i18n}}</div>
@@ -48,7 +45,7 @@
   <div class="col-md-12 text-center description-principal-page">{{'megacode.define.flow.description' | i18n}}</div>
   <div class="col-md-2"></div>
   <div class="col-md-8">
-    <img id="img-define-flow" class="define-kanban-flow image-center" src="../../../assets/principal-page/DefineFlow.png" width="90%">
+    <img id="img-define-flow" class="define-kanban-flow image-center" src="../../../../assets/principal-page/DefineFlow.png" width="90%">
   </div>
   <div class="col-md-2"></div>
 </div>
@@ -59,7 +56,7 @@
     <div class="col-md-8">
       <div class="text-center container-megacode-app">
         <div class="col-md-12 text-center container-megacode-app container-stores">
-          <img id="img-app-icon-megacode" class="image-center" src="../../../assets/principal-page/IconApp.png">
+          <img id="img-app-icon-megacode" class="image-center" src="../../../../assets/principal-page/IconApp.png">
         </div>
         <div class="col-md-12 text-center title-principal-page">{{'megacode.app.title' | i18n}}</div>
         <div class="col-md- text-center description-principal-page margin-text-megacode">
@@ -67,10 +64,10 @@
         </div>
         <div class="row container-stores">
           <div class="col-md-6 text-center container-megacode-app">
-            <img id="img-app-store" class="image-center" src="../../../assets/principal-page/AppStoreApp.png">
+            <img id="img-app-store" class="image-center" src="../../../../assets/principal-page/AppStoreApp.png">
           </div>
           <div class="col-md-6 text-center container-megacode-app">
-            <img id="img-google-store" class="image-center" src="../../../assets/principal-page/GoogleStore.png">
+            <img id="img-google-store" class="image-center" src="../../../../assets/principal-page/GoogleStore.png">
           </div>
         </div>
       </div>
