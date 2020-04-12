@@ -13,16 +13,11 @@
           {{'megacode.label.home' |i18n}}
         </a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/{{urls.test}}" routerLinkActive="active">
-          {{'megacode.label.home' |i18n}}
-        </a>
-      </li>
     </ul>
 
     <div class="form-inline">
-      <button class="btn-megacode btn btn-success my-2 my-sm-0">{{'megacode.authentication.register' | i18n}}</button>
-      <button class="btn-megacode btn btn-outline-info my-2 my-sm-0">{{'megacode.authentication.login' | i18n}}</button>
+      <button class="btn-megacode btn btn-success my-2 my-sm-0" routerLink="/{{urls.register}}" routerLinkActive="active">{{'megacode.authentication.register' | i18n}}</button>
+      <button class="btn-megacode btn btn-outline-info my-2 my-sm-0"  routerLink="/{{urls.login}}" routerLinkActive="active">{{'megacode.authentication.login' | i18n}}</button>
     </div>
   </div>
 </nav>

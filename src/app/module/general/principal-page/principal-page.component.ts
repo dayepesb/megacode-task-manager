@@ -11,7 +11,6 @@ import {Constants} from '@app/util/constants';
 export class PrincipalPageComponent implements OnInit {
   images: any [];
   url: string;
-
   paused = false;
   unpauseOnArrow = false;
   pauseOnIndicator = false;
@@ -19,19 +18,17 @@ export class PrincipalPageComponent implements OnInit {
 
   flex = window.innerWidth <= 768;
 
-
-  image: string;
-
   @ViewChild('carousel', {static : true}) carousel: NgbCarousel;
 
-  constructor(private imageService: ImageService) {
+  constructor(public imageService: ImageService) {
     this.getImagesCarrousel();
-    this.images = imageService.images;
-    console.log(this.images);
+    this.images = [];
     this.url = Constants.URL_IMAGES_S3;
   }
 
   ngOnInit() {
+    this.images = [];
+    this.images = this.imageService.images;
   }
 
   togglePaused() {
