@@ -20,7 +20,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     CommonModule,
     ApplicationPipesModuleModule,
     FontAwesomeModule,
-    NgbModule
+    NgbModule,
+    RouterModule
   ],
   exports: [
     RouterModule,
