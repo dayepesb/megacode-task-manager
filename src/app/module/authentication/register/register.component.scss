@@ -1,0 +1,47 @@
+@import "~assets/scss/variables_megacode";
+
+.form-group {
+  margin: 1rem 0rem 1rem 0rem;
+}
+
+.card {
+  margin-top: 20%;
+  -webkit-box-shadow: $box-shadow-rigth-down;
+  -moz-box-shadow: $box-shadow-rigth-down;
+  box-shadow: $box-shadow-rigth-down;
+}
+
+.form-control {
+  height: 1.8rem;
+  font-size: 0.7rem;
+  color: #9d9d9d;
+  background-color: #343a4000;
+  border: 1px solid #9d9d9d;
+  border-radius: 0.8rem;
+  text-align: center;
+}
+
+.form-control:focus {
+  color: #9d9d9d;
+  background-color: #fff0;
+  border-color: #ffffff;
+  outline: 0;
+  box-shadow: 0 0 0 0rem rgb(255, 255, 255);
+}
+
+.form-control::placeholder {
+  color: #9d9d9d;
+  text-align: center;
+}
+
+.form-control:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #9d9d9d;
+  text-align: center;
+}
+
+.form-control::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #9d9d9d;
+  text-align: center;
+}

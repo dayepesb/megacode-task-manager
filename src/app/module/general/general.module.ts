@@ -6,8 +6,8 @@ import {FooterPrincipalPageComponent} from '@app/module/general/footer-principal
 import {PrincipalPageComponent} from '@app/module/general/principal-page/principal-page.component';
 import {FaIconLibrary, FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {addLibraryIcons} from '@app/config/fontawesome-icons';
-import {ApplicationPipesModuleModule} from '@app/module/application-pipes-module/application-pipes-module.module';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {ApplicationPipesModuleModule} from '@app/module/application-pipes-module/application-pipes-module.module';
 
 
 @NgModule({
@@ -24,7 +24,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     RouterModule
   ],
   exports: [
-    RouterModule,
+    RouterModule
   ]
 })
 

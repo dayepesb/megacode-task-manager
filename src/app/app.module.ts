@@ -33,6 +33,7 @@ import {ApplicationPipesModuleModule} from '@app/module/application-pipes-module
     FontAwesomeModule,
     FormsModule,
     NgbModule,
+    ApplicationPipesModuleModule,
     GeneralModule
   ],
   bootstrap: [
