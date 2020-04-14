@@ -8,6 +8,7 @@ import {FaIconLibrary, FontAwesomeModule} from '@fortawesome/angular-fontawesome
 import {addLibraryIcons} from '@app/config/fontawesome-icons';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {ApplicationPipesModuleModule} from '@app/module/application-pipes-module/application-pipes-module.module';
+import {AppModule} from '@app/app.module';
 
 
 @NgModule({
@@ -18,10 +19,10 @@ import {ApplicationPipesModuleModule} from '@app/module/application-pipes-module
   ],
   imports: [
     CommonModule,
-    ApplicationPipesModuleModule,
     FontAwesomeModule,
     NgbModule,
-    RouterModule
+    RouterModule,
+    ApplicationPipesModuleModule
   ],
   exports: [
     RouterModule

@@ -11,6 +11,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule} from '@angular/forms';
 import {GeneralModule} from '@app/module/general/general.module';
 import {ApplicationPipesModuleModule} from '@app/module/application-pipes-module/application-pipes-module.module';
+import {AuthenticationModule} from '@app/module/authentication/authentication.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {ApplicationPipesModuleModule} from '@app/module/application-pipes-module
     FontAwesomeModule,
     FormsModule,
     NgbModule,
-    GeneralModule
+    GeneralModule,
+    AuthenticationModule
   ],
   exports: [
     RouterModule,
@@ -33,8 +35,8 @@ import {ApplicationPipesModuleModule} from '@app/module/application-pipes-module
     FontAwesomeModule,
     FormsModule,
     NgbModule,
-    ApplicationPipesModuleModule,
-    GeneralModule
+    GeneralModule,
+    AuthenticationModule
   ],
   bootstrap: [
     AppComponent
