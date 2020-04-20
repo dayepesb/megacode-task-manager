@@ -8,17 +8,27 @@
         <div class="row">
           <div class="col-md-1"></div>
           <div class="col-md-10">
-            <form novalidate>
+            <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)" novalidate>
               <div class="form-group">
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                       placeholder="{{'megacode.placeholder.email' | i18n}}" required>
+                <input type="text" class="form-control" id="registerName" name="name" ngModel placeholder="{{'megacode.placeholder.name' | i18n}}" required>
               </div>
               <div class="form-group">
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="{{'megacode.placeholder.password' | i18n}}" required>
+                <input type="text" class="form-control" id="registerLastName" name="lastname" ngModel placeholder="{{'megacode.placeholder.lastname' | i18n}}" required>
               </div>
               <div class="form-group">
-
-                <button type="submit" class="btn btn-primary">{{'megacode.button.submit' | i18n}}</button>
+                <input type="text" class="form-control" id="registerUsername" name="username" ngModel placeholder="{{'megacode.placeholder.username' | i18n}}" required>
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" id="registerEmail" name="email" ngModel placeholder="{{'megacode.placeholder.email' | i18n}}" required>
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control" id="registerPassword" name="password" ngModel placeholder="{{'megacode.placeholder.password' | i18n}}" required>
+              </div>
+              <div class="label-rigth">
+                <span routerLink="/{{urls.login}}">{{'megacode.label.signin' | i18n}}</span>
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary">{{'megacode.authentication.register' | i18n}}</button>
               </div>
             </form>
           </div>

@@ -9,6 +9,7 @@ import {FaIconLibrary, FontAwesomeModule} from '@fortawesome/angular-fontawesome
 import {addLibraryIcons} from '@app/config/fontawesome-icons';
 import {AppModule} from '@app/app.module';
 import {ApplicationPipesModuleModule} from '@app/module/application-pipes-module/application-pipes-module.module';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [LoginComponent, RegisterComponent, ForgotPasswordComponent],
@@ -17,6 +18,7 @@ import {ApplicationPipesModuleModule} from '@app/module/application-pipes-module
     FontAwesomeModule,
     NgbModule,
     RouterModule,
+    FormsModule,
     ApplicationPipesModuleModule
   ],
   exports: [

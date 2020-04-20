@@ -1,7 +1,19 @@
 @import "~assets/scss/variables_megacode";
 
 .form-group {
-  margin: 1rem 0rem 1rem 0rem;
+  button {
+    margin-top: 1.5rem;
+    background-color: $primary-button-color;
+    border-width: 0px;
+    font-size: $font-size-input-megacode;
+    border-radius: $size-6;
+    width: $size-100;
+    height: $size-28;
+  }
+  button:hover{
+    background-color: $primary-button-hover-color;
+    border-width: $size-0;
+  }
 }
 
 .card {
@@ -15,34 +27,47 @@
 .form-control {
   height: 1.8rem;
   font-size: 0.7rem;
-  color: #9d9d9d;
-  background-color: #343a4000;
-  border: 1px solid #9d9d9d;
+  color: $text-input-megacode-color;
+  background-color: $transparent-color;
+  border: $border-input-form-megacode;
   border-radius: 0.8rem;
   text-align: center;
 }
 
 .form-control:focus {
-  color: #9d9d9d;
-  background-color: #fff0;
-  border-color: #ffffff;
+  color: $text-input-megacode-color;
+  background-color: $transparent-color;
+  border-color: $white-color;
   outline: 0;
-  box-shadow: 0 0 0 0rem rgb(255, 255, 255);
+  box-shadow: 0 0 0 0 rgb(255, 255, 255);
 }
 
 .form-control::placeholder {
-  color: #9d9d9d;
+  color: $placeholder-color;
   text-align: center;
 }
 
 .form-control:-ms-input-placeholder {
   /* Internet Explorer 10-11 */
-  color: #9d9d9d;
+  color: $placeholder-color;
   text-align: center;
 }
 
 .form-control::-ms-input-placeholder {
   /* Microsoft Edge */
-  color: #9d9d9d;
+  color: $placeholder-color;
   text-align: center;
+}
+
+.label-rigth {
+  position: relative;
+
+  span {
+    font-family: $font-family-text;
+    font-size: $size-span-link;
+    color: $span-color;
+    position: absolute;
+    right: 0;
+    outline: none;
+  }
 }
