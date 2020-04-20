@@ -125,6 +125,20 @@ body {
   padding-bottom: 40px;
 }
 
+.go-to-home {
+  position: relative;
+  right: 0;
+
+  fa-icon {
+    position: absolute;
+    left: 0;
+    font-size: 2rem;
+    margin: 2rem 2rem 2rem 2rem;
+    color: $text-input-megacode-color;
+    z-index: 1000;
+    outline: none;
+  }
+}
 
 nav {
   position: fixed;

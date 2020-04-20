@@ -4,6 +4,7 @@ import {NgForm} from '@angular/forms';
 import {Notifications} from '@app/util/notifications';
 import {faEye, faEyeSlash} from '@fortawesome/free-solid-svg-icons';
 import {IconDefinition} from '@fortawesome/fontawesome-common-types';
+import {RegisterService} from '@app/service/authentication/register-service.service';
 
 @Component({
   selector: 'app-register',
@@ -18,7 +19,7 @@ export class RegisterComponent implements OnInit {
 
   urls: any = Constants.URLS_ROUTER;
 
-  constructor(private notification: Notifications) {
+  constructor(private notification: Notifications, private registerService: RegisterService) {
     this.faEye = faEye;
     this.faEyeSlash = faEyeSlash;
     this.showPassword = false;
@@ -34,7 +35,7 @@ export class RegisterComponent implements OnInit {
       } else if (!this.validateFormatPassword(form.value.password)) {
         this.notification.errorNotification('megacode.form.error', 'megacode.form.password.invalid');
       } else {
-          //Servicio de registro
+          // Servicio de registro
       }
     } else {
       if (form.value.name === '') {
@@ -51,7 +52,8 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-  validateEmail(email: string): boolean {
+  validateEmail(email: string) {
+    // tslint:disable-next-line:max-line-length
     const regexp = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
     return regexp.test(email);
   }
@@ -62,14 +64,15 @@ export class RegisterComponent implements OnInit {
     const rgxLower = new RegExp(/[a-z]/);
     const rgxNumber = new RegExp(/[0-9]/);
 
-    if (password.length < 8)
+    if (password.length < 8) {
       return false;
-    else if (!rgxCapital.test(password))
+    } else if (!rgxCapital.test(password)) {
       return false;
-    else if (!rgxLower.test(password))
+    } else if (!rgxLower.test(password)) {
       return false;
-    else if (!rgxNumber.test(password))
+    } else if (!rgxNumber.test(password)) {
       return false;
+    }
     return true;
   }
 

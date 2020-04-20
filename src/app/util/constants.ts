@@ -28,6 +28,10 @@ export class Constants {
     closeButton: true
   };
 
+  public static readonly URLS_TO_BACK = {
+    register: '/othentication/register'
+  };
+
   public static SELECT_LENGUAGE = Constants.LENGUAGES.CODE_EN;
 
   public static readonly URL_IMAGES_S3 = 'https://megacode-bucket-images.s3-sa-east-1.amazonaws.com/';

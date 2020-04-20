@@ -1,9 +1,14 @@
 import { Injectable } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
-export class RegisterServiceService {
+export class RegisterService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  postRegisterUser(dataUser: any): Promise<any> {
+    return null;
+  }
 }
