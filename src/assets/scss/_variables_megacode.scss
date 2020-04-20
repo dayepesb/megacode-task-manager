@@ -89,6 +89,9 @@ $font-family-title: charlie-semi-bold ,-apple-system,BlinkMacSystemFont,Segoe UI
 $font-family-description: charlie-text-ligth ,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Noto Sans,Ubuntu,Droid Sans,Helvetica Neue,sans-serif;
 $font-family-text: charlie-text-regular ,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Noto Sans,Ubuntu,Droid Sans,Helvetica Neue,sans-serif;
 
+$font-size-button-megacode: 0.85rem;
+$font-size-span-link: 0.9rem;
+
 //Sizes
 $size-0: 0px;
 $size-6: 6px;
@@ -97,9 +100,6 @@ $size-20: 20px;
 $size-28: 28px;
 $size-100: 100px;
 $size-768: 768px;
-
-$size-span-link: 14px;
-$font-size-input-megacode: 14px;
 
 //Percents
 $percent-100: 100%;

@@ -12,6 +12,9 @@ import {FormsModule} from '@angular/forms';
 import {GeneralModule} from '@app/module/general/general.module';
 import {ApplicationPipesModuleModule} from '@app/module/application-pipes-module/application-pipes-module.module';
 import {AuthenticationModule} from '@app/module/authentication/authentication.module';
+import {ToastrModule} from 'ngx-toastr';
+import {Notifications} from '@app/util/notifications';
+import {Constants} from '@app/util/constants';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,7 @@ import {AuthenticationModule} from '@app/module/authentication/authentication.mo
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(APP_ROUTES),
+    ToastrModule.forRoot(Constants.CONFIG_NOTIFICATIONS),
     BrowserAnimationsModule,
     FontAwesomeModule,
     FormsModule,

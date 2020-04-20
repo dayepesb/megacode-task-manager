@@ -5,10 +5,9 @@
     margin-top: 1.5rem;
     background-color: $primary-button-color;
     border-width: 0px;
-    font-size: $font-size-input-megacode;
+    font-size: $font-size-button-megacode;
     border-radius: $size-6;
     width: $size-100;
-    height: $size-28;
   }
   button:hover{
     background-color: $primary-button-hover-color;
@@ -64,7 +63,7 @@
 
   span {
     font-family: $font-family-text;
-    font-size: $size-span-link;
+    font-size: $font-size-span-link;
     color: $span-color;
     position: absolute;
     right: 0;

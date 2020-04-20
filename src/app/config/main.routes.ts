@@ -5,8 +5,8 @@ import {LoginComponent} from '@app/module/authentication/login/login.component';
 import {RegisterComponent} from '@app/module/authentication/register/register.component';
 
 export const APP_ROUTES: Routes = [
-  {path: Constants.URLS.empty, redirectTo: Constants.URLS.home, pathMatch: 'full'},
-  {path: Constants.URLS.home, component: PrincipalPageComponent},
-  {path: Constants.URLS.login, component: LoginComponent},
-  {path: Constants.URLS.register, component: RegisterComponent}
+  {path: Constants.URLS_ROUTER.empty, redirectTo: Constants.URLS_ROUTER.home, pathMatch: 'full'},
+  {path: Constants.URLS_ROUTER.home, component: PrincipalPageComponent},
+  {path: Constants.URLS_ROUTER.login, component: LoginComponent},
+  {path: Constants.URLS_ROUTER.register, component: RegisterComponent}
 ];

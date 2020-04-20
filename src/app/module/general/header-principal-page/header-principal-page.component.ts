@@ -8,7 +8,7 @@ import {Constants} from '@app/util/constants';
 })
 export class HeaderPrincipalPageComponent implements OnInit {
 
-  urls: any = Constants.URLS;
+  urls: any = Constants.URLS_ROUTER;
 
   constructor() { }
 
