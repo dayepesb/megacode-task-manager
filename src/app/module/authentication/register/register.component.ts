@@ -36,6 +36,7 @@ export class RegisterComponent implements OnInit {
         this.notification.errorNotification('megacode.form.error', 'megacode.form.password.invalid');
       } else {
           // Servicio de registro
+          this.registerService.registerUser(form.value);
       }
     } else {
       if (form.value.name === '') {

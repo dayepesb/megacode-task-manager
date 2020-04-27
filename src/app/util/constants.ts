@@ -1,4 +1,5 @@
 import {environment} from '@environment/environment';
+import * as CryptoJS from 'crypto-js';
 
 export class Constants {
 
@@ -32,6 +33,17 @@ export class Constants {
     register: '/othentication/register'
   };
 
+  public static readonly AES_KEY = 'aesEncryptionKey';
+  public static readonly AES_IV = 'encryptionIntVec';
+  public static readonly AES_KEY_CRYPTOR = CryptoJS.enc.Utf8.parse(Constants.AES_KEY);
+  public static readonly iv = CryptoJS.enc.Utf8.parse(Constants.AES_IV);
+  public static readonly AES_OPTIONS = {
+    keySize: 128 / 8,
+    iv: Constants.iv,
+    mode: CryptoJS.mode.CBC,
+    padding: CryptoJS.pad.Pkcs7
+  };
+
   public static SELECT_LENGUAGE = Constants.LENGUAGES.CODE_EN;
 
   public static readonly URL_IMAGES_S3 = 'https://megacode-bucket-images.s3-sa-east-1.amazonaws.com/';
@@ -44,4 +56,5 @@ export class Constants {
 
   public static readonly LABELS: string = Constants.BASE_URL + '/labels/app';
   public static readonly IMAGES_PRINCIPAL_PAGE: string = Constants.BASE_URL + '/image/principal/page/get';
+  public static readonly AUTHENTICATION_REGISTER: string = Constants.BASE_URL + '/athentication/register';
 }

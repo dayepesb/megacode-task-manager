@@ -8,6 +8,7 @@
     font-size: $font-size-button-megacode;
     border-radius: $size-6;
     width: $size-100;
+    outline: none;
   }
   button:hover{
     background-color: $primary-button-hover-color;
