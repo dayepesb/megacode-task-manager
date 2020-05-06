@@ -1,11 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Constants} from '@app/util/constants';
 import {NgForm} from '@angular/forms';
 import {Notifications} from '@app/util/notifications';
 import {faEye, faEyeSlash} from '@fortawesome/free-solid-svg-icons';
 import {IconDefinition} from '@fortawesome/fontawesome-common-types';
 import {RegisterService} from '@app/service/authentication/register-service.service';
-import {SpinnerOverlayService} from '@app/service/spinner/spinner.service';
 
 @Component({
   selector: 'app-register',
