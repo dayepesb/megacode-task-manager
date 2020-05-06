@@ -1,57 +1,65 @@
-import { BrowserModule } from '@angular/platform-browser';
-import {APP_INITIALIZER, NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
-import { AppComponent } from './app.component';
-import { PrincipalPageComponent } from './general/principal-page/principal-page.component';
+import {AppComponent} from './app.component';
 import {APP_ROUTES} from '@app/config/main.routes';
-import { I18nPipe } from './pipe/i18n.pipe';
-import {LabelService} from '@app/service/label-service/label.service';
-import {HttpClientModule, HttpClient} from '@angular/common/http';
-import { HeaderPrincipalPageComponent } from './general/header-principal-page/header-principal-page.component';
-import { FooterPrincipalPageComponent } from './general/footer-principal-page/footer-principal-page.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FaIconLibrary, FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {addLibraryIcons} from '@app/config/fontawesome-icons';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule} from '@angular/forms';
-
-export function loadResources(labelService: LabelService, http: HttpClient) {
-  return async () => {
-    await labelService.getLabels();
-  }
-}
+import {GeneralModule} from '@app/module/general/general.module';
+import {ApplicationPipesModuleModule} from '@app/module/application-pipes-module/application-pipes-module.module';
+import {AuthenticationModule} from '@app/module/authentication/authentication.module';
+import {ToastrModule} from 'ngx-toastr';
+import {Constants} from '@app/util/constants';
+import {SpinnerComponent} from './module/general/spinner/spinner.component';
+import { SpinnerOverlayComponent } from './module/general/spinner-overlay/spinner-overlay.component';
+import {OverlayModule} from '@angular/cdk/overlay';
+import {MegacodeInterceptor} from '@app/util/MegacodeInterceptor';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PrincipalPageComponent,
-    I18nPipe,
-    HeaderPrincipalPageComponent,
-    FooterPrincipalPageComponent
+    SpinnerComponent,
+    SpinnerOverlayComponent
   ],
   imports: [
+    ApplicationPipesModuleModule,
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(APP_ROUTES),
+    ToastrModule.forRoot(Constants.CONFIG_NOTIFICATIONS),
     BrowserAnimationsModule,
     FontAwesomeModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    GeneralModule,
+    AuthenticationModule,
+    OverlayModule
   ],
   exports: [
-    RouterModule
+    RouterModule,
+    HttpClientModule,
+    FontAwesomeModule,
+    FormsModule,
+    NgbModule,
+    GeneralModule,
+    AuthenticationModule
+  ],
+  bootstrap: [
+    AppComponent
   ],
   providers: [
-    I18nPipe,
     {
-      provide: APP_INITIALIZER,
-      useFactory: loadResources,
-      multi: true,
-      deps: [LabelService, HttpClient]
+      provide: HTTP_INTERCEPTORS,
+      useClass: MegacodeInterceptor,
+      multi: true
     }
-  ],
-  bootstrap: [AppComponent]
+  ]
 })
+
 export class AppModule {
   constructor(private library: FaIconLibrary) {
     addLibraryIcons(library);

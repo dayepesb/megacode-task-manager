@@ -13,6 +13,7 @@ export class ImageService {
 
   getImagePrincipalPage(): Promise<any> {
 
+    this.images = [];
     let res: Promise<any>;
     let url = Constants.IMAGES_PRINCIPAL_PAGE;
     const params: HttpParams = new HttpParams().set(Constants.PARAMS.APP_ID, Constants.ID_APP);

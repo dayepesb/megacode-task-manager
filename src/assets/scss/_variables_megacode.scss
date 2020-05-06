@@ -68,6 +68,13 @@ $title-color: #9d9d9d;
 $description-color: #efefef;
 $background-primary-color: #343a40 !important;
 $background-second-color: #171a20;
+$span-color: #7986a0;
+$primary-button-color: #2c4c84;
+$primary-button-hover-color: #112746;
+$placeholder-color: #9d9d9d;
+$text-input-megacode-color: #9d9d9d;
+$white-color: #ffffff;
+$transparent-color: #fff0;
 
 //Fomnts
 $font-size-title: 1.5rem;
@@ -82,9 +89,16 @@ $font-family-title: charlie-semi-bold ,-apple-system,BlinkMacSystemFont,Segoe UI
 $font-family-description: charlie-text-ligth ,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Noto Sans,Ubuntu,Droid Sans,Helvetica Neue,sans-serif;
 $font-family-text: charlie-text-regular ,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Noto Sans,Ubuntu,Droid Sans,Helvetica Neue,sans-serif;
 
+$font-size-button-megacode: 0.85rem;
+$font-size-span-link: 0.9rem;
+
 //Sizes
+$size-0: 0px;
+$size-6: 6px;
 $size-10: 10px;
 $size-20: 20px;
+$size-28: 28px;
+$size-100: 100px;
 $size-768: 768px;
 
 //Percents
@@ -94,10 +108,12 @@ $percent-10: 10%;
 $percent-5: 5%;
 
 //box shadow
-
 $box-shadow-all-borders: 0px 0px 21px 10px rgba(0,0,0,0.65);
+$box-shadow-rigth-down: 3px 3px 2px 3px rgba(0,0,0,0.48);
 
 //Genral
+$border-input-form-megacode: 1px solid #9d9d9d;
+
 body {
   background-color: $background-color;
 }
@@ -109,6 +125,20 @@ body {
   padding-bottom: 40px;
 }
 
+.go-to-home {
+  position: relative;
+  right: 0;
+
+  fa-icon {
+    position: absolute;
+    left: 0;
+    font-size: 2rem;
+    margin: 2rem 2rem 2rem 2rem;
+    color: $text-input-megacode-color;
+    z-index: 1000;
+    outline: none;
+  }
+}
 
 nav {
   position: fixed;
@@ -119,4 +149,14 @@ nav {
   -moz-box-shadow: 0px 15px 15px 0px rgba(0,0,0,0.71);
   box-shadow: 0px 15px 15px 0px rgba(0,0,0,0.71);
   background-color: $background-color;
+  top: 0;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  border: $border-input-form-megacode;
+  -webkit-text-fill-color: $text-input-megacode-color;
+  -webkit-box-shadow: 0 0 0px 1000px #252a2f inset;
+  transition: background-color 5000s ease-in-out 0s;
 }
