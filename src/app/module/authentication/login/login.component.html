@@ -1,3 +1,39 @@
 <div class="go-to-home">
   <fa-icon [icon]="['fas','home']" routerLink="/{{urls.empty}}"></fa-icon>
 </div>
+
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <div class="card bg-dark">
+      <div class="card-body text-center">
+        <img src="../../../../assets/logos/logo-lg.png" width="180">
+        <div class="row">
+          <div class="col-md-1"></div>
+          <div class="col-md-10">
+            <form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)" novalidate>
+              <div class="form-group">
+                <input type="text" class="form-control" id="registerUsernameEmail" name="usernameOrEmail" ngModel placeholder="{{'megacode.placeholder.username.email' | i18n}}" required>
+              </div>
+              <div class="form-group">
+                <fa-icon [icon]="this.showPassword ? faEye : faEyeSlash" style="position: absolute; right: 25px; font-size: 1rem;margin-top: 3px; color: #9d9d9d" (click)="showPasswordInput()"></fa-icon>
+                <input  [type]="this.showPassword ? 'text' : 'password'" class="form-control" id="registerPassword" name="password" ngModel placeholder="{{'megacode.placeholder.password' | i18n}}" required>
+              </div>
+              <div class="label-rigth">
+                <span routerLink="/{{urls.register}}">{{'megacode.label.signup' | i18n}}</span>
+              </div>
+              <div class="label-rigth">
+                <span routerLink="/{{urls.fogotPassword}}">{{'megacode.label.forgotpassword' | i18n}}</span>
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary">{{'megacode.authentication.login' | i18n}}</button>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-1"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3"></div>
+</div>

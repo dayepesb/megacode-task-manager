@@ -10,9 +10,10 @@ import {addLibraryIcons} from '@app/config/fontawesome-icons';
 import {AppModule} from '@app/app.module';
 import {ApplicationPipesModuleModule} from '@app/module/application-pipes-module/application-pipes-module.module';
 import {FormsModule} from '@angular/forms';
+import { VerifyComponent } from './verify/verify.component';
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent, ForgotPasswordComponent],
+  declarations: [LoginComponent, RegisterComponent, ForgotPasswordComponent, VerifyComponent],
   imports: [
     CommonModule,
     FontAwesomeModule,

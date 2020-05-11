@@ -1,0 +1,33 @@
+<div class="go-to-home">
+  <fa-icon [icon]="['fas','home']" routerLink="/{{urls.empty}}"></fa-icon>
+</div>
+<div *ngIf="verified !== null">
+  <div class="status-img">
+    <ng-container #imgVerify *ngIf="verified; else imgFail">
+      <img  src="assets/svg/Check.svg"/>
+    </ng-container>
+    <ng-template #imgFail>
+      <img  src="assets/svg/X.svg"/>
+    </ng-template>
+  </div>
+  <div class="row">
+    <div class="col-md-12 title-verify-account-megacode">
+      <ng-container #imgVerify *ngIf="verified; else titleFail">
+        {{'megacode.account.verify.title.success' | i18n}}
+      </ng-container>
+      <ng-template #titleFail>
+        {{'megacode.account.verify.title.error' | i18n}}
+      </ng-template>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 descrinbe-verify-account-megacode">
+      <ng-container #imgVerify *ngIf="verified; else descriptionFail">
+        {{'megacode.account.verify.describe.success' | i18n}}
+      </ng-container>
+      <ng-template #descriptionFail>
+        {{'megacode.account.verify.describe.error' | i18n}}
+      </ng-template>
+    </div>
+  </div>
+</div>

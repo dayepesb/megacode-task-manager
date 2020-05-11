@@ -1,0 +1,33 @@
+@import "~assets/scss/variables_megacode";
+.status-img {
+  padding-top: 5vh;
+  text-align: center;
+  img {
+    width: 90px;
+    height: auto !important;
+  }
+}
+
+.title-verify-account-megacode {
+  font-family: $font-family-title;
+  letter-spacing: $letter-spacing;
+  font-weight: $font-weith-title;
+  line-height: $line-height;
+  font-size: $font-size-title;
+  font-style: $font-style;
+  margin-top: 2vh;
+  color: $title-color;
+  text-align: center;
+}
+
+.descrinbe-verify-account-megacode {
+  font-family: $font-family-description;
+  letter-spacing: $letter-spacing;
+  font-weight: $font-weith-description;
+  line-height: $line-height;
+  font-size: $font-size-description;
+  font-style: $font-style;
+  margin-top: 1vh;
+  color: $description-color;
+  text-align: center;
+}

@@ -34,11 +34,13 @@ export class Constants {
     home: 'home',
     login: 'authentication/login',
     register: 'authentication/register',
-    fogotPassword: 'authentication/forgot/password'
+    fogotPassword: 'authentication/forgot/password',
+    verify: 'verify'
   };
 
   public static readonly URLS_TO_BACK = {
-    register: Constants.BASE_URL + '/authentication/register'
+    register: Constants.BASE_URL + '/authentication/register',
+    verifyAccount: Constants.BASE_URL + '/authentication/verify'
   };
 
   public static readonly CONFIG_NOTIFICATIONS = {
