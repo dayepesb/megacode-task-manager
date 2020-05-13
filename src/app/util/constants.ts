@@ -23,10 +23,8 @@ export class Constants {
   };
 
   public static readonly AES_OPTIONS = {
-    keySize: 128 / 8,
-    iv: Constants.iv,
-    mode: CryptoJS.mode.CBC,
-    padding: CryptoJS.pad.Pkcs7
+    keySize: 16,
+    iv: Constants.iv
   };
   public static readonly URLS_ROUTER = {
     empty: '',
@@ -35,12 +33,16 @@ export class Constants {
     login: 'authentication/login',
     register: 'authentication/register',
     fogotPassword: 'authentication/forgot/password',
-    verify: 'verify'
+    verify: 'verify',
+    resendVerify: 'authentication/verify',
+    principalPageUser: 'user/home'
   };
 
   public static readonly URLS_TO_BACK = {
     register: Constants.BASE_URL + '/authentication/register',
-    verifyAccount: Constants.BASE_URL + '/authentication/verify'
+    verifyAccount: Constants.BASE_URL + '/authentication/verify',
+    login: Constants.BASE_URL + '/authentication/login',
+    resendVerify: Constants.BASE_URL + '/authentication/resend/verify'
   };
 
   public static readonly CONFIG_NOTIFICATIONS = {

@@ -4,6 +4,7 @@ import {IconDefinition} from '@fortawesome/fontawesome-common-types';
 import {faEye, faEyeSlash} from '@fortawesome/free-solid-svg-icons';
 import {NgForm} from '@angular/forms';
 import {LoginService} from '@app/service/authentication/login.service';
+import {Notifications} from '@app/util/notifications';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +19,7 @@ export class LoginComponent implements OnInit {
 
   urls: any = Constants.URLS_ROUTER;
 
-  constructor(loginService: LoginService) {
+  constructor(private loginService: LoginService, private notifications: Notifications) {
     this.faEye = faEye;
     this.faEyeSlash = faEyeSlash;
     this.showPassword = false;
@@ -28,7 +29,16 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
+    let values = {
+      username: form.value.usernameOrEmail,
+      password: form.value.password
+    };
 
+    if (values.username == null || values.username == '' || values.password == null || values.password == '') {
+      this.notifications.errorNotification('megacode.error.empty.input.title','megacode.error.empty.input.description');
+    } else {
+      this.loginService.login(values);
+    }
   }
 
   showPasswordInput(): void {

@@ -11,9 +11,10 @@ import {AppModule} from '@app/app.module';
 import {ApplicationPipesModuleModule} from '@app/module/application-pipes-module/application-pipes-module.module';
 import {FormsModule} from '@angular/forms';
 import { VerifyComponent } from './verify/verify.component';
+import { VerifyUserComponent } from './verify-user/verify-user.component';
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent, ForgotPasswordComponent, VerifyComponent],
+  declarations: [LoginComponent, RegisterComponent, ForgotPasswordComponent, VerifyComponent, VerifyUserComponent],
   imports: [
     CommonModule,
     FontAwesomeModule,
