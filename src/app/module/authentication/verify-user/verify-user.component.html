@@ -1,5 +1,5 @@
 <div class="go-to-home">
-  <fa-icon [icon]="['fas','home']" routerLink="/{{urls.empty}}"></fa-icon>
+  <fa-icon [icon]="['fas','home']" routerLink="/{{urls.empty.url}}"></fa-icon>
 </div>
 
 <div class="row">
@@ -19,7 +19,7 @@
                 <input type="text" class="form-control" id="email" name="email" ngModel placeholder="{{'megacode.placeholder.email' | i18n}}" required>
               </div>
               <div class="form-group">
-                <button type="submit" class="btn btn-primary">{{'megacode.authentication.login' | i18n}}</button>
+                <button type="submit" class="btn btn-primary">{{'megacode.authentication.verify' | i18n}}</button>
               </div>
             </form>
           </div>

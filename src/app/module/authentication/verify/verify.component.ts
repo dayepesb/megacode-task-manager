@@ -17,7 +17,6 @@ export class VerifyComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private registerService: RegisterService) {
     this.activatedRoute.queryParams.subscribe(params => {
       this.token = params.token;
-      console.log(this.token);
       if (!this.token) {
         this.verified = false;
       } else {

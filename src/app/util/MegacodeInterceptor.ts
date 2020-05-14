@@ -24,6 +24,7 @@ export class MegacodeInterceptor implements HttpInterceptor {
     }
 
     //Add barrer token
+    let token = localStorage.getItem('token');
 
     return next.handle(req).pipe(
       tap(event => {

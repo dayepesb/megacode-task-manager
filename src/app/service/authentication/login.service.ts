@@ -25,9 +25,11 @@ export class LoginService {
     res = this.http.post(this.url.login, dataUser, {params: params})
       .toPromise()
       .then(success => {
-        //aca tengo que guardar el token
-        console.log(success);
-        this.router.navigateByUrl(this.urlPage.principalPageUser);
+        let varsLocalStorage = Constants.VARS_LOCALSTORAGE;
+        varsLocalStorage.forEach(value => {
+          localStorage.setItem(value, success[value]);
+        });
+        this.router.navigateByUrl(this.urlPage.principalPageUser.url);
       }).catch(err => {
         if (err.error.code == -18) {
           this.router.navigateByUrl(this.urlPage.resendVerify);
