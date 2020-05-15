@@ -74,3 +74,14 @@
     outline: none;
   }
 }
+
+.description-verify-email {
+  font-family: $font-family-description;
+  letter-spacing: $letter-spacing;
+  font-weight: $font-weith-description;
+  line-height: $line-height;
+  font-size: $font-size-description;
+  font-style: $font-style;
+  color: $description-color;
+  margin-bottom: 5vh;
+}

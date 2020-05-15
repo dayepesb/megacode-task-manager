@@ -1,9 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
-import {RouterModule} from '@angular/router';
+import {Router, RouterModule} from '@angular/router';
 import {AppComponent} from './app.component';
-import {APP_ROUTES} from '@app/config/main.routes';
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FaIconLibrary, FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {addLibraryIcons} from '@app/config/fontawesome-icons';
@@ -15,9 +12,15 @@ import {AuthenticationModule} from '@app/module/authentication/authentication.mo
 import {ToastrModule} from 'ngx-toastr';
 import {Constants} from '@app/util/constants';
 import {SpinnerComponent} from './module/general/spinner/spinner.component';
-import { SpinnerOverlayComponent } from './module/general/spinner-overlay/spinner-overlay.component';
+import {SpinnerOverlayComponent} from './module/general/spinner-overlay/spinner-overlay.component';
 import {OverlayModule} from '@angular/cdk/overlay';
 import {MegacodeInterceptor} from '@app/util/MegacodeInterceptor';
+import {VerifyTokenService} from '@app/service/authentication/verify-token.service';
+import {Location} from '@angular/common';
+import {validateJwtUserStorage} from '@app/config/initapp.functions';
+import {APP_INITIALIZER, NgModule} from '@angular/core';
+import {APP_ROUTES} from '@app/config/main.routes';
+import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -56,6 +59,12 @@ import {MegacodeInterceptor} from '@app/util/MegacodeInterceptor';
       provide: HTTP_INTERCEPTORS,
       useClass: MegacodeInterceptor,
       multi: true
+    },
+    {
+      provide: APP_INITIALIZER,
+      useFactory: validateJwtUserStorage,
+      multi: true,
+      deps: [VerifyTokenService, HttpClient, Router, Location]
     }
   ]
 })

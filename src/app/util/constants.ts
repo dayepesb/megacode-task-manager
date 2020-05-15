@@ -23,22 +23,29 @@ export class Constants {
   };
 
   public static readonly AES_OPTIONS = {
-    keySize: 128 / 8,
-    iv: Constants.iv,
-    mode: CryptoJS.mode.CBC,
-    padding: CryptoJS.pad.Pkcs7
-  };
-  public static readonly URLS_ROUTER = {
-    empty: '',
-    urlNotFound: 'not/found',
-    home: 'home',
-    login: 'authentication/login',
-    register: 'authentication/register',
-    fogotPassword: 'authentication/forgot/password'
+    keySize: 16,
+    iv: Constants.iv
   };
 
+  public static readonly URLS_ROUTER = {
+    empty: { url: '', authorized: false },
+    urlNotFound: { url: 'not/found' , authorized: false },
+    home: { url: 'home', authorized: false },
+    login: { url: 'authentication/login', authorized: false },
+    register: { url: 'authentication/register', authorized: false },
+    fogotPassword: { url: 'authentication/forgot/password', authorized: false },
+    verify: { url: 'verify', authorized: false },
+    resendVerify: { url: 'authentication/verify', authorized: false },
+    principalPageUser: { url: 'user/home', authorized: true }
+  };
+
+
   public static readonly URLS_TO_BACK = {
-    register: Constants.BASE_URL + '/authentication/register'
+    register: Constants.BASE_URL + '/authentication/register',
+    verifyAccount: Constants.BASE_URL + '/authentication/verify',
+    login: Constants.BASE_URL + '/authentication/login',
+    resendVerify: Constants.BASE_URL + '/authentication/resend/verify',
+    verifyToken: Constants.BASE_URL + '/authentication/token/verify'
   };
 
   public static readonly CONFIG_NOTIFICATIONS = {
@@ -48,6 +55,16 @@ export class Constants {
     progressBar: true,
     closeButton: true
   };
+
+  public static readonly VARS_LOCALSTORAGE = [
+    'email',
+    'name',
+    'lastname',
+    'username',
+    'userImage',
+    'token'
+  ];
+
   public static SELECT_LENGUAGE = Constants.LENGUAGES.CODE_EN;
 
   public static readonly URL_IMAGES_S3 = 'https://megacode-bucket-images.s3-sa-east-1.amazonaws.com/';

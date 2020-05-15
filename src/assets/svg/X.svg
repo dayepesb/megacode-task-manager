@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="861px" height="897px" viewBox="0 0 861 897" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>X</title>
+    <g id="Complements" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="X">
+            <circle id="Oval" fill="#5A1313" cx="430" cy="467" r="430"></circle>
+            <circle id="Oval" fill="#BA2E2E" cx="430.5" cy="430" r="430"></circle>
+            <g transform="translate(191.000000, 218.000000)" fill="#000000" fill-opacity="0.24" id="Path-2">
+                <polygon points="0 108.779335 109.794416 0 239 129.441331 239 347"></polygon>
+                <polygon transform="translate(359.000000, 174.000000) scale(-1, 1) translate(-359.000000, -174.000000) " points="239 109.465849 349.253807 1 479 130.068301 479 347"></polygon>
+                <polygon transform="translate(119.500000, 303.000000) scale(1, -1) translate(-119.500000, -303.000000) " points="0 238.465849 109.794416 130 239 259.068301 239 476"></polygon>
+                <polygon transform="translate(359.000000, 303.500000) scale(-1, -1) translate(-359.000000, -303.500000) " points="239 238.779335 349.253807 130 479 259.441331 479 477"></polygon>
+            </g>
+            <g transform="translate(191.000000, 192.000000)" fill="#D8D8D8" id="Path-2">
+                <polygon points="0 108.779335 109.794416 0 239 129.441331 239 347"></polygon>
+                <polygon transform="translate(359.000000, 174.000000) scale(-1, 1) translate(-359.000000, -174.000000) " points="239 109.465849 349.253807 1 479 130.068301 479 347"></polygon>
+                <polygon transform="translate(119.500000, 303.000000) scale(1, -1) translate(-119.500000, -303.000000) " points="0 238.465849 109.794416 130 239 259.068301 239 476"></polygon>
+                <polygon transform="translate(359.000000, 303.500000) scale(-1, -1) translate(-359.000000, -303.500000) " points="239 238.779335 349.253807 130 479 259.441331 479 477"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

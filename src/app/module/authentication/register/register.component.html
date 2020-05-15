@@ -1,5 +1,5 @@
 <div class="go-to-home">
-  <fa-icon [icon]="['fas','home']" routerLink="/{{urls.empty}}"></fa-icon>
+  <fa-icon [icon]="['fas','home']" routerLink="/{{urls.empty.url}}"></fa-icon>
 </div>
 <div class="row">
   <div class="col-md-3"></div>
@@ -28,7 +28,7 @@
                 <input  [type]="this.showPassword ? 'text' : 'password'" class="form-control" id="registerPassword" name="password" ngModel placeholder="{{'megacode.placeholder.password' | i18n}}" required>
               </div>
               <div class="label-rigth">
-                <span routerLink="/{{urls.login}}">{{'megacode.label.signin' | i18n}}</span>
+                <span routerLink="/{{urls.login.url}}">{{'megacode.label.signin' | i18n}}</span>
               </div>
               <div class="form-group">
                 <button type="submit" class="btn btn-primary">{{'megacode.authentication.register' | i18n}}</button>

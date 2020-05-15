@@ -1,14 +1,8 @@
 import {APP_INITIALIZER, NgModule} from '@angular/core';
-import { CommonModule } from '@angular/common';
 import {LabelService} from '@app/service/label-service/label.service';
 import {HttpClient} from '@angular/common/http';
 import {I18nPipe} from '@app/pipe/i18n.pipe';
-
-export function loadResources(labelService: LabelService, http: HttpClient) {
-  return async () => {
-    await labelService.getLabels();
-  };
-}
+import {loadResources} from '@app/config/initapp.functions';
 
 @NgModule({
   declarations: [
