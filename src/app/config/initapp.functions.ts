@@ -5,6 +5,12 @@ import {Location} from '@angular/common';
 import {Constants} from '@app/util/constants';
 import {LabelService} from '@app/service/label-service/label.service';
 
+function deleteParamsUrl(url: string): string {
+  let index = url.indexOf('?');
+  if ( index === -1 )
+    index = url.length;
+  return url.substr(0, index);
+}
 export function validateJwtUserStorage(verifyTokenService: VerifyTokenService, http: HttpClient, router: Router, location: Location) {
   return async () => {
     console.log('Validando token guardado');
@@ -15,7 +21,7 @@ export function validateJwtUserStorage(verifyTokenService: VerifyTokenService, h
     let urlsRoute = Constants.URLS_ROUTER;
 
     for ( let key in urlsRoute ) {
-      if (urlsRoute[key].url === actualUrl ) {
+      if (urlsRoute[key].url === deleteParamsUrl(actualUrl) ) {
         needAuthenticate = urlsRoute[key].authorized;
         break;
       }
