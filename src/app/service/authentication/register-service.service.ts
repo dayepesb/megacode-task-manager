@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
-import {Constants} from '@app/util/constants';
 import {Notifications} from '@app/util/notifications';
 import {EncryptionService} from '@app/service/encryption-service/encryption-service.service';
+import {UrlConstant} from '@app/constant/url.constant';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,7 @@ export class RegisterService {
 
   registerUser(dataUser: any): Promise<any> {
     let res: Promise<any>;
-    let url = Constants.URLS_TO_BACK.register;
+    let url = UrlConstant.URLS_TO_BACK.register;
     const params: HttpParams = new HttpParams();
 
     dataUser.password = this.encryptionService.encrypAes(dataUser.password);
@@ -33,7 +33,7 @@ export class RegisterService {
 
   verifyUser(dataUser: any): Promise<any> {
     let res: Promise<any>;
-    let url = Constants.URLS_TO_BACK.verifyAccount;
+    let url = UrlConstant.URLS_TO_BACK.verifyAccount;
     const params: HttpParams = new HttpParams();
 
     res = this.http.post(url, dataUser,{ params: params })

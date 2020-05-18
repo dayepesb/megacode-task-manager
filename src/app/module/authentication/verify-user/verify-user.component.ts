@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {Constants} from '@app/util/constants';
+import {Component, OnInit} from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {LoginService} from '@app/service/authentication/login.service';
+import {UrlConstant} from '@app/constant/url.constant';
 
 @Component({
   selector: 'app-verify-user',
@@ -10,7 +10,7 @@ import {LoginService} from '@app/service/authentication/login.service';
 })
 export class VerifyUserComponent implements OnInit {
 
-  urls: any = Constants.URLS_ROUTER;
+  urls: any = UrlConstant.URLS_ROUTER;
 
   constructor(private loginService: LoginService) { }
 

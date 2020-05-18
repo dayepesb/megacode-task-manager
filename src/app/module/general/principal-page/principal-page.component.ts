@@ -1,7 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
 import {ImageService} from '@app/service/image-service/image.service';
-import {Constants} from '@app/util/constants';
+import {Constants} from '@app/constant/constants';
 
 @Component({
   selector: 'app-principal-page',

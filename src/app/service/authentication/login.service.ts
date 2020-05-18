@@ -1,17 +1,18 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
-import {Constants} from '@app/util/constants';
+import {Constants} from '@app/constant/constants';
 import {Notifications} from '@app/util/notifications';
 import {EncryptionService} from '@app/service/encryption-service/encryption-service.service';
 import {Router} from '@angular/router';
+import {UrlConstant} from '@app/constant/url.constant';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  url: any = Constants.URLS_TO_BACK;
-  urlPage: any = Constants.URLS_ROUTER;
+  url: any = UrlConstant.URLS_TO_BACK;
+  urlPage: any = UrlConstant.URLS_ROUTER;
 
   constructor(private router: Router, private http: HttpClient, private notifications: Notifications, private encryptionService: EncryptionService) {
   }
@@ -32,7 +33,7 @@ export class LoginService {
         this.router.navigateByUrl(this.urlPage.principalPageUser.url);
       }).catch(err => {
         if (err.error.code == -18) {
-          this.router.navigateByUrl(this.urlPage.resendVerify);
+          this.router.navigateByUrl(this.urlPage.resendVerify.url);
         } else {
           this.notifications.errorNotification('megacode.error.empty.input.title', err.error.message);
         }

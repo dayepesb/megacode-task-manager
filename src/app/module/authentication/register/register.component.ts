@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {Constants} from '@app/util/constants';
 import {NgForm} from '@angular/forms';
 import {Notifications} from '@app/util/notifications';
 import {faEye, faEyeSlash} from '@fortawesome/free-solid-svg-icons';
 import {IconDefinition} from '@fortawesome/fontawesome-common-types';
 import {RegisterService} from '@app/service/authentication/register-service.service';
+import {UrlConstant} from '@app/constant/url.constant';
 
 @Component({
   selector: 'app-register',
@@ -17,7 +17,7 @@ export class RegisterComponent implements OnInit {
   faEye: IconDefinition;
   faEyeSlash: IconDefinition;
 
-  urls: any = Constants.URLS_ROUTER;
+  urls: any = UrlConstant.URLS_ROUTER;
 
   constructor(private notification: Notifications, private registerService: RegisterService) {
     this.faEye = faEye;

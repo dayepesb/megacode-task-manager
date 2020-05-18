@@ -2,8 +2,9 @@ import {VerifyTokenService} from '@app/service/authentication/verify-token.servi
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {Location} from '@angular/common';
-import {Constants} from '@app/util/constants';
+import {Constants} from '@app/constant/constants';
 import {LabelService} from '@app/service/label-service/label.service';
+import {UrlConstant} from '@app/constant/url.constant';
 
 function deleteParamsUrl(url: string): string {
   let index = url.indexOf('?');
@@ -18,7 +19,7 @@ export function validateJwtUserStorage(verifyTokenService: VerifyTokenService, h
     let actualUrl = location.path();
     let token = localStorage.getItem('token');
     let needAuthenticate: boolean;
-    let urlsRoute = Constants.URLS_ROUTER;
+    let urlsRoute = UrlConstant.URLS_ROUTER;
 
     for ( let key in urlsRoute ) {
       if (urlsRoute[key].url === deleteParamsUrl(actualUrl) ) {
@@ -35,7 +36,7 @@ export function validateJwtUserStorage(verifyTokenService: VerifyTokenService, h
             router.navigateByUrl(actualUrl);
           } else {
             console.log('Tiene token y se redirije a la url principal de usuario');
-            router.navigateByUrl(Constants.URLS_ROUTER.principalPageUser.url);
+            router.navigateByUrl(UrlConstant.URLS_ROUTER.principalPageUser.url);
           }
         }).catch(error => {
           localStorage.clear();
@@ -44,7 +45,7 @@ export function validateJwtUserStorage(verifyTokenService: VerifyTokenService, h
             router.navigateByUrl(actualUrl);
           } else {
             console.log('Tiene token no esta autorizado y se redirije a la url del home');
-            router.navigateByUrl(Constants.URLS_ROUTER.empty.url);
+            router.navigateByUrl(UrlConstant.URLS_ROUTER.empty.url);
           }
         });
     } else {
@@ -53,7 +54,7 @@ export function validateJwtUserStorage(verifyTokenService: VerifyTokenService, h
         router.navigateByUrl(actualUrl);
       } else {
         console.log('No tiene token y se redirije a la url del login');
-        router.navigateByUrl(Constants.URLS_ROUTER.login.url);
+        router.navigateByUrl(UrlConstant.URLS_ROUTER.login.url);
       }
     }
   };

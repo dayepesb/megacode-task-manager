@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {RegisterService} from '@app/service/authentication/register-service.service';
-import {Constants} from '@app/util/constants';
+import {UrlConstant} from '@app/constant/url.constant';
 
 @Component({
   selector: 'app-verify',
@@ -12,7 +12,7 @@ export class VerifyComponent implements OnInit {
 
   token: string;
   verified: boolean = null;
-  urls: any = Constants.URLS_ROUTER;
+  urls: any = UrlConstant.URLS_ROUTER;
 
   constructor(private activatedRoute: ActivatedRoute, private registerService: RegisterService) {
     this.activatedRoute.queryParams.subscribe(params => {

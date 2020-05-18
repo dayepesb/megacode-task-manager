@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
-import {Constants} from '@app/util/constants';
+import {Injectable} from '@angular/core';
+import {Constants} from '@app/constant/constants';
 import {HttpClient, HttpParams} from '@angular/common/http';
+import {UrlConstant} from '@app/constant/url.constant';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class ImageService {
 
     this.images = [];
     let res: Promise<any>;
-    let url = Constants.IMAGES_PRINCIPAL_PAGE;
+    let url = UrlConstant.IMAGES_PRINCIPAL_PAGE;
     const params: HttpParams = new HttpParams().set(Constants.PARAMS.APP_ID, Constants.ID_APP);
 
     res = this.http.get(url,{params: params})

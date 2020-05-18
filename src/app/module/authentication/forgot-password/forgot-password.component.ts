@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {Constants} from '@app/util/constants';
+import {Component, OnInit} from '@angular/core';
+import {NgForm} from '@angular/forms';
+import {ForgotPasswordService} from '@app/service/authentication/forgot-password.service';
+import {UrlConstant} from '@app/constant/url.constant';
 
 @Component({
   selector: 'app-forgot-password',
@@ -8,11 +10,15 @@ import {Constants} from '@app/util/constants';
 })
 export class ForgotPasswordComponent implements OnInit {
 
-  urls: any = Constants.URLS_ROUTER;
+  urls: any = UrlConstant.URLS_ROUTER;
 
-  constructor() { }
+  constructor(private forgotPasswordService: ForgotPasswordService) { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(form: NgForm) {
+
   }
 
 }

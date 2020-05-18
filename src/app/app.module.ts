@@ -10,7 +10,7 @@ import {GeneralModule} from '@app/module/general/general.module';
 import {ApplicationPipesModuleModule} from '@app/module/application-pipes-module/application-pipes-module.module';
 import {AuthenticationModule} from '@app/module/authentication/authentication.module';
 import {ToastrModule} from 'ngx-toastr';
-import {Constants} from '@app/util/constants';
+import {Constants} from '@app/constant/constants';
 import {SpinnerComponent} from './module/general/spinner/spinner.component';
 import {SpinnerOverlayComponent} from './module/general/spinner-overlay/spinner-overlay.component';
 import {OverlayModule} from '@angular/cdk/overlay';

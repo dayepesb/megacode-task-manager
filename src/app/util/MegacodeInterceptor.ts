@@ -3,7 +3,7 @@ import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse} from
 import {Observable} from 'rxjs';
 import {SpinnerOverlayService} from '@app/service/spinner/spinner.service';
 import {tap} from 'rxjs/operators';
-import {Constants} from '@app/util/constants';
+import {UrlConstant} from '@app/constant/url.constant';
 
 
 @Injectable({
@@ -13,8 +13,8 @@ export class MegacodeInterceptor implements HttpInterceptor {
   urlsSpinner: string[] = [];
   constructor(private spinner: SpinnerOverlayService) {
     // tslint:disable-next-line:forin
-    for (const u in Constants.URLS_TO_BACK) {
-      this.urlsSpinner.push(Constants.URLS_TO_BACK[u]);
+    for (const u in UrlConstant.URLS_TO_BACK) {
+      this.urlsSpinner.push(UrlConstant.URLS_TO_BACK[u]);
     }
   }
 

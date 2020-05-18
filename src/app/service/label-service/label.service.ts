@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
-import {Constants} from '@app/util/constants';
+import {Constants} from '@app/constant/constants';
+import {UrlConstant} from '@app/constant/url.constant';
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +26,7 @@ export class LabelService {
 
   getLabels(): Promise<any> {
     let res: Promise<any>;
-    let url = Constants.LABELS;
+    let url = UrlConstant.LABELS;
 
     const params: HttpParams = new HttpParams().set(Constants.PARAMS.APP_ID, Constants.ID_APP);
 

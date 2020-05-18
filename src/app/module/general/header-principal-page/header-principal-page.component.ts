@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {Constants} from '@app/util/constants';
+import {Component, OnInit} from '@angular/core';
+import {UrlConstant} from '@app/constant/url.constant';
 
 @Component({
   selector: 'app-header-principal-page',
@@ -8,7 +8,7 @@ import {Constants} from '@app/util/constants';
 })
 export class HeaderPrincipalPageComponent implements OnInit {
 
-  urls: any = Constants.URLS_ROUTER;
+  urls: any = UrlConstant.URLS_ROUTER;
 
   constructor() { }
 

@@ -1,13 +1,13 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Constants} from '@app/util/constants';
+import {UrlConstant} from '@app/constant/url.constant';
 
 @Injectable({
   providedIn: 'root'
 })
 export class VerifyTokenService {
 
-  url: any = Constants.URLS_TO_BACK;
+  url: any = UrlConstant.URLS_TO_BACK;
 
   constructor(private http: HttpClient) { }
 

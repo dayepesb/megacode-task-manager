@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import {Constants} from '@app/util/constants';
+import {Component, OnInit} from '@angular/core';
 import {IconDefinition} from '@fortawesome/fontawesome-common-types';
 import {faEye, faEyeSlash} from '@fortawesome/free-solid-svg-icons';
 import {NgForm} from '@angular/forms';
 import {LoginService} from '@app/service/authentication/login.service';
 import {Notifications} from '@app/util/notifications';
+import {UrlConstant} from '@app/constant/url.constant';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   faEye: IconDefinition;
   faEyeSlash: IconDefinition;
 
-  urls: any = Constants.URLS_ROUTER;
+  urls: any = UrlConstant.URLS_ROUTER;
 
   constructor(private loginService: LoginService, private notifications: Notifications) {
     this.faEye = faEye;
